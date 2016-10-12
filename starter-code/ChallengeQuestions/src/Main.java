@@ -16,7 +16,17 @@ public class Main {
      * @return An array of integers with two elements, the largest and smallest from the method parameter
      */
     public static int[] findLargestAndSmallest(int array[]){
+        int largestNum = array[0];
+        int smallestNum = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > largestNum){
+                largestNum = array[i];
+            }
 
+            if (array[i] < smallestNum){
+                smallestNum = array[i];
+            }
+        } return new int[]{largestNum, smallestNum};
     }
 
 
@@ -32,6 +42,26 @@ public class Main {
      * @return Sum of the two largest values
      */
     public static int sumOfTwoLargest(List intList){
+        int largerNum1 = intList.get(0);
+        int largerNum2 = 0;
+        for (int i = 0; i < intList.size(); i++) {
+            if (i > largerNum1 ){
+                i = largerNum1;
+            }
+
+            if (i > largerNum2){
+                i = largerNum2;
+            } return largerNum1 + largerNum2;
+        }
+
+        if (intList.isEmpty()){
+            return 0;
+        }
+
+        if (intList.size() == 1){
+            return intList.get(0);
+        }
+
 
     }
 
@@ -51,7 +81,12 @@ public class Main {
      * @return A List of Integers that doesn't contain duplicates.
      */
     public static List removeDuplicatesFromList(List intList){
-
+        List<Integer> rmDup = new ArrayList<>();
+        for (int i = 0; i < intList.size; i++) {
+            if (!rmDup.contains(intList.get(i))){
+                rmDup.add((Integer) intList.get(i));
+            }
+        } return rmDup;
     }
 
 
